@@ -84,6 +84,18 @@
   color: #333;
 }
 
+.alert {
+  background-color: #5cb85c;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 15px 0;
+  color: #fff;
+}
+
+.alert i {
+  margin-right: 10px;
+}
+
 .lead {
   font-size: 20px;
 }
@@ -168,6 +180,45 @@
   padding: 4rem;
 }
 
+/* Animations */
+
+@keyframes sfl {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes sfr {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes sft {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes sfb {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 /* Main CSS */
 
 * {
@@ -207,13 +258,20 @@ img {
   height: 100%;
 }
 
+code,
+pre {
+  color: #fff;
+  background-color: #333;
+  padding: 10px;
+}
+
 /* Navbar. */
 
 .header {
   background-color: #047aed;
   height: 70px;
   color: #fff;
-  border-bottom: 1px #333 solid;
+  border-bottom: 1px #fff solid;
 }
 
 .header .flex {
@@ -258,6 +316,10 @@ img {
   overflow: visible;
 }
 
+.text {
+  animation: sfl 1s ease-in;
+}
+
 .form {
   position: relative;
   top: 60px;
@@ -266,6 +328,7 @@ img {
   padding: 40px;
   /* justify-self: flex-end; */
   z-index: 1;
+  animation: sfr 1s ease-in;
 }
 
 .form_1 {
@@ -306,6 +369,7 @@ img {
 
 .stats {
   padding-top: 100px;
+  animation: sfb 1s ease-in;
 }
 
 .stats-heading {
@@ -367,6 +431,56 @@ img {
   margin: 0 10px;
 }
 
+/* Features */
+
+.fhead img,
+.dhead img {
+  width: 200px;
+  justify-self: flex-end;
+}
+
+.fmain img {
+  width: 300px;
+  justify-self: flex-end;
+}
+
+.fmain1 i {
+  margin-right: 20px;
+}
+
+.fmain1 .grid {
+  padding: 30px;
+}
+
+.fmain1 .grid > *:first-child {
+  grid-column: 1 / 4;
+}
+.fmain1 .grid > *:nth-child(2) {
+  grid-column: 1 / 3;
+}
+
+/* docs */
+
+.dmain h3 {
+  margin: 20px 0;
+}
+
+.dmain .grid {
+  grid-template-columns: 1fr 2fr;
+  align-items: flex-start;
+}
+
+.dmain nav li {
+  font-size: 17px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px #ccc solid;
+}
+
+.dmain a:hover {
+  font-weight: bold;
+}
+
 /* Media */
 
 @media (max-width: 768px) {
@@ -374,7 +488,9 @@ img {
   .showcase .grid,
   .stats .grid,
   .cli .grid,
-  .cloud .grid {
+  .cloud .grid,
+  .fmain1 .grid,
+  .dmain .grid {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }
@@ -394,6 +510,24 @@ img {
   .cli .grid > *:first-child {
     grid-column: 1;
     grid-row: 1;
+  }
+
+  .fhead,
+  .fmain,
+  .dhead {
+    text-align: center;
+  }
+  .fhead img,
+  .fmain img,
+  .dhead img {
+    justify-self: center;
+  }
+
+  .fmain1 .grid > *:first-child {
+    grid-column: 1;
+  }
+  .fmain1 .grid > *:nth-child(2) {
+    grid-column: 1;
   }
 }
 
