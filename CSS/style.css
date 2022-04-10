@@ -431,6 +431,10 @@ pre {
   margin: 0 10px;
 }
 
+.social i:hover {
+  color: #047aed;
+}
+
 /* Features */
 
 .fhead img,
